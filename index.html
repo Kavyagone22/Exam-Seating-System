@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Seating System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for message in messages %}
+            <div class="flash">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <!-- ... rest of your content ... -->
+    <div class="section">
+        <h1 style="text-align: center;"> EXAM SEATING SYSTEM</h1>
+        <h2>Add Student</h2>
+        <div class="card">
+            <form action="/add_student" method="POST" class="styled-form">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div>
+                    <label for="roll_no">Roll No:</label>
+                    <input type="text" name="roll_no" id="roll_no">
+                </div>
+                <div>
+                    <label for="department">Department:</label>
+                    <input type="text" name="department" id="department">
+                </div>
+                <div>
+                    <label for="semester">Semester:</label>
+                    <input type="number" name="semester" id="semester">
+                </div>
+                <button type="submit" class="btn">Add Student</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Add Room</h2>
+        <div class="card">
+            <form action="/add_room" method="POST" class="styled-form">
+                <div>
+                    <label for="room_no">Room No:</label>
+                    <input type="text" name="room_no" id="room_no">
+                </div>
+                <div>
+                    <label for="capacity">Capacity:</label>
+                    <input type="number" name="capacity" id="capacity">
+                </div>
+                <button type="submit" class="btn">Add Room</button>
+            </form>
+        </div>
+    </div>
+
+    <a href="/generate_seating" class="seating-link">Generate Seating Plan</a>
+</body>
+</html>

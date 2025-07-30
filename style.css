@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #4ce44c;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 350px;      /* CHANGED: reasonable small width for the whole form */
+    margin: 32px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.card {
+    background: #4ce44c;
+    border-radius: 11px;
+    box-shadow: 0 2px 12px rgba(16, 222, 85, 0.1);
+    padding: 16px 10px;
+    width: 100%;           /* CHANGED: fill the container, NOT 50% */
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.08em;
+    font-weight: 700;
+    color: #276438;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.2px;
+}
+
+.styled-form label {
+    display: block;
+    margin-bottom: 2px;
+    font-weight: 600;
+    font-size: 0.98em;
+    color: #1a3a1a;
+}
+
+.styled-form input[type="text"], 
+.styled-form input[type="number"], 
+.styled-form select {
+    width: 75%;            /* CHANGED: even smaller input boxes, adjust as needed */
+    padding: 4px 6px;
+    margin-bottom: 8px;
+    border: 1px solid #b7e7b7;
+    border-radius: 4px;
+    font-size: 0.96em;
+    background: #f8fff8;
+    color: #222;
+    transition: border-color 0.2s, background 0.2s;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;     /* UNCOMMENTED: center input boxes */
+    margin-right: auto;    /* UNCOMMENTED: center input boxes */
+}
+
+.styled-form input[type="text"]:focus, 
+.styled-form input[type="number"]:focus,
+.styled-form select:focus {
+    border-color: #ea709d;
+    background: #fff0fa;
+    outline: beige;
+}
+
+.btn {
+    background: #ea709d;
+    color: #fff;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1em;
+    margin: 10px auto 0 auto;
+    display: block;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.07);
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+    background: #c048a0;
+}
+
+.seating-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.98em;
+    background: #276438;
+    display: block;
+    text-align: center;
+    margin: 15px auto 0 auto;
+    padding: 8px 18px;
+    border-radius: 1px;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.07);
+    width: fit-content;
+    transition: background 2s;
+}
+
+.seating-link:hover {
+    background: #ea709d;
+    text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+    .container {
+        max-width: 98vw;
+        padding: 0 2vw;
+        gap: 10px;
+    }
+    .card {
+        padding: 6px 1vw;
+    }
+    h2 {
+        font-size: 0.85em;
+    }
+}

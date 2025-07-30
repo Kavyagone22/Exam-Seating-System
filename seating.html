@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seating Arrangement</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Seating Arrangement</h2>
+    {% if seating and seating|length > 0 %}
+    <table border="1">
+        <tr>
+            <th>Roll No</th>
+            <th>Room</th>
+            <th>Seat No</th>
+        </tr>
+        {% for seat in seating %}
+        <tr>
+            <td>{{ seat.roll_no }}</td>
+            <td>{{ seat.room_no }}</td>
+            <td>{{ seat.seat_number }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No seating assignments available. Please add students and rooms.</p>
+    {% endif %}
+    <br>
+    <a href="/">← Back</a>
+</body>
+</html>
