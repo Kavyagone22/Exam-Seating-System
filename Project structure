@@ -1,0 +1,10 @@
+exam-seating-system/
+│
+├── app.py                   # Main Flask application
+├── templates/
+│   ├── index.html           # Homepage for adding students and rooms
+│   └── seating.html         # Page to view generated seating
+├── static/
+│   └── style.css            # Optional custom styling
+├── exam_seating.db          # SQLite database (auto-generated)
+└── README.md                # Project documentation
